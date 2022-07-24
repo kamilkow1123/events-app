@@ -2,12 +2,12 @@ import React from "react";
 //global style
 import "../style/style.scss";
 //components
-import Form from "./EventForm/EventForm";
+import EventForm from "./EventForm/EventForm";
 
 const App = () => {
   return (
     <div>
-      <Form />
+      <EventForm />
     </div>
   );
 };

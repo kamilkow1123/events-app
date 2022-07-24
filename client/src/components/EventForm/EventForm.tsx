@@ -39,6 +39,8 @@ const EventForm = () => {
             <input
               className="form__input"
               type="text"
+              role="input"
+              aria-label="firstName"
               {...register("firstName", { required: "First name is required" })}
             />
             <p className="form__error">{errors.firstName?.message}</p>
@@ -49,6 +51,8 @@ const EventForm = () => {
             <input
               className="form__input"
               type="text"
+              role="input"
+              aria-label="lastName"
               {...register("lastName", { required: "Last name is required" })}
             />
             <p className="form__error">{errors.lastName?.message}</p>
@@ -59,6 +63,8 @@ const EventForm = () => {
             <input
               className="form__input"
               type="email"
+              role="input"
+              aria-label="email"
               {...register("email", {
                 required: "Email is required",
                 validate: validateEmail,
@@ -87,7 +93,7 @@ const EventForm = () => {
           </div>
 
           <button className="form__button" type="submit">
-            {event.loading ? <LoadingSpinner /> : "Submit"}
+            {event?.loading ? <LoadingSpinner /> : "Submit"}
           </button>
         </form>
       </div>

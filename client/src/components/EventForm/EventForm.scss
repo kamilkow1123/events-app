@@ -50,7 +50,7 @@
     background-color: $clr-light;
     border-bottom: 2px solid $clr-primary-300;
     width: 100%;
-    -webkit-box-shadow: 0 0 0 100px $clr-light inset;
+    box-shadow: 0 0 0 100px $clr-light inset;
   }
 
   &__error{
