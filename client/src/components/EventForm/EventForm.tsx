@@ -1,28 +1,31 @@
 import React from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import DatePicker from "react-datepicker";
+//hooks
+import { useAppSelector, useAppDispatch } from "../../state/hooks";
+//actions
+import { createEvent } from "./eventFormSlice";
 //style
-import "./Form.scss";
+import "./EventForm.scss";
 //utils
 import { validateEmail } from "./utils";
+//interfaces
+import { Event } from "../../interfaces";
 
-type Inputs = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  eventDate: Date;
-};
-
-const Form = () => {
+const EventForm = () => {
   const {
     control,
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<Event>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const event = useAppSelector((state) => state.event);
+  const dispatch = useAppDispatch();
+
+  const onSubmit: SubmitHandler<Event> = (data) => {
     console.log("data", data);
+    dispatch(createEvent(data));
   };
 
   return (
@@ -83,7 +86,7 @@ const Form = () => {
           </div>
 
           <button className="form__button" type="submit">
-            Submit
+            {event.loading ? "Loading..." : "Submit"}
           </button>
         </form>
       </div>
@@ -91,4 +94,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default EventForm;
