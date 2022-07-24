@@ -1,0 +1,72 @@
+@import "../../style/colors";
+@import "../../style/media-queries";
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $clr-primary-300;
+  padding: 0 20px;
+
+  &__wrapper{
+    background-color: $clr-light;
+    padding: 60px 35px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+
+    @include tablet{
+      padding: 80px 50px;
+    }
+    
+    @include desktop{
+      padding: 100px 70px;
+    }
+  }
+
+  &__header{
+    margin-bottom: 30px;
+  }
+
+  &__group{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+
+  &__label{
+    padding-bottom: 5px;
+    color: $clr-primary-300;
+    font-size: 0.9rem;
+  }
+
+  &__input{
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    background-color: $clr-light;
+    border-bottom: 2px solid $clr-primary-300;
+    width: 100%;
+    -webkit-box-shadow: 0 0 0 100px $clr-light inset;
+  }
+
+  &__error{
+    color: $clr-accent;
+    padding: 5px 0;
+    font-size: 0.8rem;
+  }
+
+  &__button{
+    background-color: $clr-accent;
+    border: none;
+    outline: none;
+    color: $clr-light;
+    padding: 15px 20px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 25px;
+  }
+}
