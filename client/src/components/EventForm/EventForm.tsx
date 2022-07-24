@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import DatePicker from "react-datepicker";
+//components
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 //hooks
 import { useAppSelector, useAppDispatch } from "../../state/hooks";
 //actions
@@ -24,7 +26,6 @@ const EventForm = () => {
   const dispatch = useAppDispatch();
 
   const onSubmit: SubmitHandler<Event> = (data) => {
-    console.log("data", data);
     dispatch(createEvent(data));
   };
 
@@ -86,7 +87,7 @@ const EventForm = () => {
           </div>
 
           <button className="form__button" type="submit">
-            {event.loading ? "Loading..." : "Submit"}
+            {event.loading ? <LoadingSpinner /> : "Submit"}
           </button>
         </form>
       </div>
