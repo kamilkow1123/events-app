@@ -7,7 +7,7 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
-    "types": ["node","jest"],
+    "types": ["node","jest", "cypress", "@testing-library/cypress"],
     "lib": ["dom", "esnext"],
     "module": "esnext",
     "esModuleInterop": true

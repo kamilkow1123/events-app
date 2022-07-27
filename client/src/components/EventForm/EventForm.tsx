@@ -35,7 +35,9 @@ const EventForm = () => {
         <h1 className="form__header">Add new event</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form__group">
-            <label className="form__label">First name</label>
+            <label htmlFor="firstName" className="form__label">
+              First name
+            </label>
             <input
               className="form__input"
               type="text"
@@ -47,7 +49,9 @@ const EventForm = () => {
           </div>
 
           <div className="form__group">
-            <label className="form__label">Last name</label>
+            <label htmlFor="lastName" className="form__label">
+              Last name
+            </label>
             <input
               className="form__input"
               type="text"
@@ -59,7 +63,9 @@ const EventForm = () => {
           </div>
 
           <div className="form__group">
-            <label className="form__label">Email</label>
+            <label htmlFor="email" className="form__label">
+              Email
+            </label>
             <input
               className="form__input"
               type="email"
@@ -74,7 +80,9 @@ const EventForm = () => {
           </div>
 
           <div className="form__group">
-            <label className="form__label">Event date</label>
+            <label htmlFor="eventDate" className="form__label">
+              Event date
+            </label>
             <Controller
               control={control}
               name="eventDate"
