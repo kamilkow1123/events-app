@@ -20,7 +20,7 @@ const initialState: InitialState = {
 export const createEvent = createAsyncThunk(
   "event/createEvent",
   async (data: Event) => {
-    const response = await eventsApi.post("event", data);
+    const response = await eventsApi.post("events", data);
     return response.data;
   }
 );
