@@ -1,4 +1,3 @@
-// require("module-alias/register");
 import { config } from "dotenv";
 config();
 import express, { Application } from "express";
