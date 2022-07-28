@@ -1,7 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import "@testing-library/jest-dom";
+import { expect } from "@jest/globals";
+// import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/extend-expect";
+//component
 import EventForm from "./EventForm";
 //redux mocks
 import { Provider } from "react-redux";
@@ -32,7 +35,7 @@ describe("Event Form component", () => {
   });
 
   it("renders button with Submit text", () => {
-    expect(screen.getByRole("button")).toHaveTextContent(/submit/i);
+    expect(screen.getByRole("button").textContent).toBe("Submit");
   });
 
   it("displays info that every field is required", async () => {

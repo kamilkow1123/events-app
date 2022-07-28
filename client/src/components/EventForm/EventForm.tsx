@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import DatePicker from "react-datepicker";
 //components
@@ -19,6 +19,7 @@ const EventForm = () => {
     control,
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Event>();
 
@@ -28,6 +29,12 @@ const EventForm = () => {
   const onSubmit: SubmitHandler<Event> = (data) => {
     dispatch(createEvent(data));
   };
+
+  useEffect(() => {
+    if (!event.error) {
+      reset();
+    }
+  }, [event.events]);
 
   return (
     <div className="form">

@@ -4,10 +4,11 @@
   "description": "",
   "main": "src/index.tsx",
   "scripts": {
-    "test": "jest --watchAll",
-    "start": "webpack serve --mode development --open --hot",
+    "test": "jest",
+    "dev": "webpack serve --mode development --open --hot",
     "build": "webpack --mode production",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress": "cypress run"
   },
   "author": "Kamil Kowalewski",
   "license": "ISC",
